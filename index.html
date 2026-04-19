@@ -41,80 +41,117 @@
     </script>
     <style>
         body { background-color: #f9f9f9; color: #1a1c1c; overflow-x: hidden; scroll-behavior: smooth; }
-        .display-lg { font-size: clamp(2.5rem, 8vw, 4rem); line-height: 1.1; letter-spacing: -0.02em; font-family: 'Newsreader', serif; }
-        .headline-lg { font-size: 2.5rem; line-height: 1.2; font-family: 'Newsreader', serif; }
+        .display-lg { font-size: clamp(2.25rem, 10vw, 4rem); line-height: 1.1; letter-spacing: -0.02em; font-family: 'Newsreader', serif; }
+        .headline-lg { font-size: clamp(1.75rem, 6vw, 2.5rem); line-height: 1.2; font-family: 'Newsreader', serif; }
         .headline-md { font-size: 1.75rem; line-height: 1.2; font-family: 'Newsreader', serif; }
         .body-lg { font-size: 1.125rem; line-height: 1.6; font-family: 'Work Sans', sans-serif; }
-        .btn-primary { background: linear-gradient(135deg, #9a3f60 0%, #e37a9d 100%); color: white; padding: 0.85rem 2rem; border-radius: 0.5rem; font-family: 'Work Sans', sans-serif; text-transform: uppercase; letter-spacing: 0.05rem; font-weight: 700; transition: all 0.3s ease; display: inline-block; }
-        .badge-gold { background-color: #735c00; color: #ffdf00; padding: 0.5rem 1.25rem; border-radius: 9999px; font-family: 'Newsreader', serif; font-style: italic; font-weight: 700; }
-        .card { background: #ffffff; border-radius: 1rem; padding: 2rem; box-shadow: 0 10px 30px -10px rgba(0,0,0,0.05); }
+        .btn-primary { background: linear-gradient(135deg, #9a3f60 0%, #e37a9d 100%); color: white; padding: 0.85rem 1.5rem; border-radius: 0.5rem; font-family: 'Work Sans', sans-serif; text-transform: uppercase; letter-spacing: 0.05rem; font-weight: 700; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); display: inline-block; }
+        .btn-primary:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 10px 20px rgba(154, 63, 96, 0.2); }
+        .btn-primary:active { transform: translateY(0) scale(0.98); }
+        
+        .badge-gold { background-color: #735c00; color: #ffdf00; padding: 0.5rem 1.25rem; border-radius: 9999px; font-family: 'Newsreader', serif; font-style: italic; font-weight: 700; animation: float 6s ease-in-out infinite; }
+        .card { background: #ffffff; border-radius: 1rem; padding: 2rem; box-shadow: 0 10px 30px -10px rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px -15px rgba(0,0,0,0.1); }
+        
         .priority-number { background: #9a3f60; color: white; width: 24px; height: 24px; display: inline-flex; items-center; justify-center; border-radius: 50%; font-size: 12px; font-weight: bold; margin-right: 8px; flex-shrink: 0; }
         
         .tier-0 { background-color: #ffffff; }
         .tier-1 { background-color: #f9f9f9; }
         .tier-2 { background-color: #f3f3f3; }
         .tier-3 { background-color: #eeeeee; }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(-2deg); }
+            50% { transform: translateY(-15px) rotate(1deg); }
+        }
+        @keyframes float-alt {
+            0%, 100% { transform: translateY(0) rotate(12deg); }
+            50% { transform: translateY(-20px) rotate(15deg); }
+        }
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-float { animation: float 8s ease-in-out infinite; }
+        .animate-float-slow { animation: float-alt 10s ease-in-out infinite; }
+        .animate-slide-up { animation: slideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+        .animate-twinkle { animation: twinkle 3s ease-in-out infinite; }
+
+        .sparkle { position: absolute; width: 4px; height: 4px; background: white; border-radius: 50%; pointer-events: none; }
     </style>
 </head>
-<body class="font-sans antialiased">
+<body class="font-sans antialiased overflow-x-hidden">
 
     <!-- Hero -->
-    <header class="relative min-h-[90vh] flex items-center justify-center p-8 overflow-hidden tier-1">
-        <div class="absolute top-20 -left-10 w-64 h-64 bg-primary-container rounded-full blur-3xl opacity-20"></div>
-        <div class="absolute bottom-20 -right-10 w-80 h-80 bg-secondary-container rounded-full blur-3xl opacity-20"></div>
+    <header class="relative min-h-screen flex items-center justify-center p-6 md:p-12 overflow-hidden tier-1">
+        <!-- Magic Background Elements -->
+        <div class="absolute top-20 -left-10 w-64 h-64 bg-primary-container rounded-full blur-3xl opacity-20 animate-float"></div>
+        <div class="absolute bottom-20 -right-10 w-80 h-80 bg-secondary-container rounded-full blur-3xl opacity-20 animate-float-slow"></div>
         
-        <div class="max-w-4xl text-center relative z-10">
-            <span class="badge-gold mb-8 inline-block transform -rotate-2">Anniversary Souvenir Guide 2026</span>
+        <!-- Pixie Dust Sparkles -->
+        <div class="sparkle top-1/4 left-1/4 animate-twinkle" style="animation-delay: 0s"></div>
+        <div class="sparkle top-1/3 right-1/4 animate-twinkle" style="animation-delay: 1s"></div>
+        <div class="sparkle bottom-1/4 left-1/3 animate-twinkle" style="animation-delay: 2s"></div>
+        <div class="sparkle top-1/2 right-1/2 animate-twinkle" style="animation-delay: 1.5s"></div>
+
+        <div class="max-w-4xl text-center relative z-10 animate-slide-up">
+            <span class="badge-gold mb-8 inline-block">Anniversary Souvenir Guide 2026</span>
             <h1 class="display-lg text-primary mb-8">Disneyland <br>& California Adventure</h1>
-            <p class="body-lg text-secondary max-w-2xl mx-auto mb-12 font-medium">
-                A Comprehensive Playbook for the Big 10th Birthday Expedition. <br>
+            <p class="body-lg text-secondary max-w-2xl mx-auto mb-12 font-medium px-4">
+                A Comprehensive Playbook for the Big 10th Birthday Expedition. <br class="hidden md:block">
                 Monday, April 20 – Wednesday, April 22
             </p>
-            <div class="flex flex-wrap gap-4 justify-center">
-                <a href="#birthday" class="btn-primary">Birthday Strategy</a>
-                <a href="#itinerary" class="btn-primary" style="background: #336381">Daily Playbook</a>
-                <a href="#snacks" class="btn-primary" style="background: #735c00">Snack Strategist</a>
-                <a href="#gifts" class="btn-primary" style="background: #e37a9d">Gift Strategy</a>
-                <a href="#packing" class="btn-primary" style="background: #735c00">The Checklist</a>
+            <div class="flex flex-wrap gap-3 md:gap-4 justify-center px-2">
+                <a href="#birthday" class="btn-primary text-sm md:text-base">Birthday Strategy</a>
+                <a href="#itinerary" class="btn-primary text-sm md:text-base" style="background: #336381">Daily Playbook</a>
+                <a href="#snacks" class="btn-primary text-sm md:text-base" style="background: #735c00">Snack Strategist</a>
+                <a href="#gifts" class="btn-primary text-sm md:text-base" style="background: #e37a9d">Gift Strategy</a>
+                <a href="#packing" class="btn-primary text-sm md:text-base" style="background: #735c00">The Checklist</a>
             </div>
         </div>
 
-        <div class="absolute bottom-10 right-10 transform rotate-12 bg-tertiary text-white p-6 rounded-full w-40 h-40 flex flex-col items-center justify-center text-center shadow-2xl z-20">
-            <span class="font-serif italic text-xl">Official</span>
-            <span class="font-bold text-4xl">10</span>
-            <span class="font-serif italic text-lg">Year Old!</span>
+        <div class="absolute -bottom-5 -right-5 md:bottom-10 md:right-10 transform rotate-12 bg-tertiary text-white p-4 md:p-6 rounded-full w-32 h-32 md:w-40 md:h-40 flex flex-col items-center justify-center text-center shadow-2xl z-20 animate-float-slow">
+            <span class="font-serif italic text-base md:text-xl">Official</span>
+            <span class="font-bold text-3xl md:text-4xl">10</span>
+            <span class="font-serif italic text-sm md:text-lg">Year Old!</span>
         </div>
     </header>
 
     <!-- Birthday Magic Section -->
-    <section id="birthday" class="py-24 tier-0">
-        <div class="container mx-auto px-8 max-w-5xl">
-            <div class="flex flex-col md:flex-row gap-16 items-center">
+    <section id="birthday" class="py-16 md:py-24 tier-0">
+        <div class="container mx-auto px-6 md:px-8 max-w-5xl">
+            <div class="flex flex-col md:flex-row gap-12 md:gap-16 items-center">
                 <div class="md:w-1/2">
                     <h2 class="display-lg text-primary mb-8 italic">The Birthday <br> Playbook</h2>
-                    <div class="space-y-8">
-                        <div class="bg-surface-container-low p-8 rounded-xl relative">
-                            <span class="absolute -top-4 -left-4 bg-tertiary text-white w-10 h-10 flex items-center justify-center rounded-full font-bold">1</span>
-                            <h3 class="font-serif text-2xl text-secondary mb-2 italic">The Button</h3>
-                            <p class="body-lg opacity-80">Head to <strong>City Hall</strong> or any shop first thing Tuesday. Ask for a free "Happy Birthday" button. The Cast Members will wish him a happy birthday all day!</p>
+                    <div class="space-y-6 md:space-y-8">
+                        <div class="bg-surface-container-low p-6 md:p-8 rounded-xl relative hover:shadow-md transition-shadow">
+                            <span class="absolute -top-3 -left-3 md:-top-4 md:-left-4 bg-tertiary text-white w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full font-bold text-sm md:text-base">1</span>
+                            <h3 class="font-serif text-xl md:text-2xl text-secondary mb-2 italic">The Button</h3>
+                            <p class="body-lg opacity-80 text-sm md:text-base">Head to <strong>City Hall</strong> or any shop first thing Tuesday. Ask for a free "Happy Birthday" button. The Cast Members will wish him a happy birthday all day!</p>
                         </div>
-                        <div class="bg-surface-container-low p-8 rounded-xl relative">
-                            <span class="absolute -top-4 -left-4 bg-tertiary text-white w-10 h-10 flex items-center justify-center rounded-full font-bold">2</span>
-                            <h3 class="font-serif text-2xl text-secondary mb-2 italic">Budget Treats</h3>
-                            <p class="body-lg opacity-80">Skip the $150 dinner. Grab a <strong>Dole Whip</strong> or <strong>Mickey Beignets</strong>. Bring your own small birthday candle for the perfect photo moment.</p>
+                        <div class="bg-surface-container-low p-6 md:p-8 rounded-xl relative hover:shadow-md transition-shadow">
+                            <span class="absolute -top-3 -left-3 md:-top-4 md:-left-4 bg-tertiary text-white w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full font-bold text-sm md:text-base">2</span>
+                            <h3 class="font-serif text-xl md:text-2xl text-secondary mb-2 italic">Budget Treats</h3>
+                            <p class="body-lg opacity-80 text-sm md:text-base">Skip the $150 dinner. Grab a <strong>Dole Whip</strong> or <strong>Mickey Beignets</strong>. Bring your own small birthday candle for the perfect photo moment.</p>
                         </div>
-                        <div class="bg-surface-container-low p-8 rounded-xl relative">
-                            <span class="absolute -top-4 -left-4 bg-tertiary text-white w-10 h-10 flex items-center justify-center rounded-full font-bold">3</span>
-                            <h3 class="font-serif text-2xl text-secondary mb-2 italic">Free Surprises</h3>
-                            <p class="body-lg opacity-80">Ask for birthday stickers! In <strong>Galaxy's Edge</strong>, mention the birthday to the Resistance or First Order—they often have special interactions.</p>
+                        <div class="bg-surface-container-low p-6 md:p-8 rounded-xl relative hover:shadow-md transition-shadow">
+                            <span class="absolute -top-3 -left-3 md:-top-4 md:-left-4 bg-tertiary text-white w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full font-bold text-sm md:text-base">3</span>
+                            <h3 class="font-serif text-xl md:text-2xl text-secondary mb-2 italic">Free Surprises</h3>
+                            <p class="body-lg opacity-80 text-sm md:text-base">Ask for birthday stickers! In <strong>Galaxy's Edge</strong>, mention the birthday to the Resistance or First Order—they often have special interactions.</p>
                         </div>
                     </div>
                 </div>
-                <div class="md:w-1/2">
-                    <div class="p-4 bg-secondary-container rounded-3xl transform rotate-2">
-                        <div class="bg-secondary p-12 rounded-2xl text-white">
+                <div class="md:w-1/2 w-full">
+                    <div class="p-3 md:p-4 bg-secondary-container rounded-3xl transform rotate-2">
+                        <div class="bg-secondary p-8 md:p-12 rounded-2xl text-white">
                             <h3 class="headline-md mb-6 italic">Director's Note</h3>
-                            <p class="body-lg opacity-90 leading-relaxed italic">"A 10th birthday is a digital heirloom moment. Focus on the stickers, the buttons, and the atmosphere. The magic is in the details, not the price tag."</p>
+                            <p class="body-lg opacity-90 leading-relaxed italic text-sm md:text-base">"A 10th birthday is a digital heirloom moment. Focus on the stickers, the buttons, and the atmosphere. The magic is in the details, not the price tag."</p>
                         </div>
                     </div>
                 </div>
@@ -123,39 +160,39 @@
     </section>
 
     <!-- Lightning Lane Rules -->
-    <section class="py-24 tier-2">
-        <div class="container mx-auto px-8 max-w-6xl text-center">
-            <h2 class="display-lg text-secondary mb-16">Mastering the <br> Lightning Lane</h2>
+    <section class="py-16 md:py-24 tier-2">
+        <div class="container mx-auto px-6 md:px-8 max-w-6xl text-center">
+            <h2 class="display-lg text-secondary mb-12 md:mb-16">Mastering the <br> Lightning Lane</h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16 text-left">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-12 md:mb-16 text-left">
                 <div class="card bg-white">
-                    <h3 class="headline-sm font-serif italic text-primary text-2xl mb-4 underline">The Tech Rules</h3>
-                    <ul class="space-y-6 body-lg">
+                    <h3 class="font-serif italic text-primary text-xl md:text-2xl mb-4 underline">The Tech Rules</h3>
+                    <ul class="space-y-4 md:space-y-6 body-lg text-sm md:text-base">
                         <li class="flex gap-4">
                             <span class="text-tertiary">★</span>
                             <span><strong>The 120-Min Rule:</strong> Book as soon as you tap in, OR every 2 hours. Set a phone timer.</span>
                         </li>
                         <li class="flex gap-4">
                             <span class="text-tertiary">★</span>
-                            <span><strong>Free Photos:</strong> LLMP includes <strong>Unlimited PhotoPass</strong>. Stop at every photographer (Castle, Falcon, Cars Land)!</span>
+                            <span><strong>Free Photos:</strong> LLMP includes <strong>Unlimited PhotoPass</strong>. Stop at every photographer!</span>
                         </li>
                         <li class="flex gap-4">
                             <span class="text-tertiary">★</span>
-                            <span><strong>Virtual Queue:</strong> Tiana's Bayou requires joining at 7 AM or 1 PM (at Airbnb) in the app.</span>
+                            <span><strong>Virtual Queue:</strong> Tiana's Bayou requires joining at 7 AM or 1 PM in the app.</span>
                         </li>
                     </ul>
                 </div>
                 <div class="card bg-primary text-white">
-                    <h3 class="headline-sm font-serif italic text-2xl mb-4">No-Pay Thrills</h3>
-                    <p class="mb-6 opacity-90">Avoid paying extra for Individual Lightning Lanes (ILL):</p>
-                    <ul class="space-y-6 body-lg">
+                    <h3 class="font-serif italic text-xl md:text-2xl mb-4">No-Pay Thrills</h3>
+                    <p class="mb-6 opacity-90 text-sm md:text-base">Avoid paying extra for Individual Lightning Lanes (ILL):</p>
+                    <ul class="space-y-4 md:space-y-6 body-lg text-sm md:text-base">
                         <li class="flex gap-4">
                             <span class="text-tertiary-container">✔</span>
                             <span><strong>Radiator Springs:</strong> Use the <strong>Single Rider Line</strong>. Turns 2 hours into 20 mins.</span>
                         </li>
                         <li class="flex gap-4">
                             <span class="text-tertiary-container">✔</span>
-                            <span><strong>Rise of the Resistance:</strong> Either "Rope Drop" (arrive 45m early) or ride during fireworks at 9 PM.</span>
+                            <span><strong>Rise of the Resistance:</strong> Either "Rope Drop" or ride during fireworks at 9 PM.</span>
                         </li>
                     </ul>
                 </div>
@@ -164,27 +201,27 @@
     </section>
 
     <!-- Daily Playbook -->
-    <section id="itinerary" class="py-24 tier-1">
-        <div class="container mx-auto px-8 max-w-6xl">
-            <h2 class="display-lg text-primary mb-24 text-center">The Daily Playbook</h2>
+    <section id="itinerary" class="py-16 md:py-24 tier-1">
+        <div class="container mx-auto px-6 md:px-8 max-w-6xl">
+            <h2 class="display-lg text-primary mb-16 md:mb-24 text-center">The Daily Playbook</h2>
 
-            <div class="space-y-48">
+            <div class="space-y-24 md:space-y-48">
                 <!-- Day 1 -->
                 <div class="relative">
-                    <div class="absolute -top-12 -left-4 font-serif italic text-9xl text-secondary opacity-5 pointer-events-none">01</div>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+                    <div class="absolute -top-8 -left-2 md:-top-12 md:-left-4 font-serif italic text-7xl md:text-9xl text-secondary opacity-5 pointer-events-none">01</div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16">
                         <div>
-                            <h3 class="font-serif italic text-5xl text-secondary mb-4">Monday</h3>
+                            <h3 class="font-serif italic text-4xl md:text-5xl text-secondary mb-4">Monday</h3>
                             <p class="font-bold uppercase tracking-widest text-tertiary mb-6">California Adventure</p>
                         </div>
-                        <div class="md:col-span-2 space-y-8">
-                            <div class="bg-white p-10 rounded-2xl shadow-sm border-l-8 border-primary">
-                                <ul class="space-y-6 body-lg">
-                                    <li class="flex items-center gap-6">
+                        <div class="md:col-span-2 space-y-6 md:space-y-8">
+                            <div class="bg-white p-6 md:p-10 rounded-2xl shadow-sm border-l-8 border-primary">
+                                <ul class="space-y-4 md:space-y-6 body-lg text-sm md:text-base">
+                                    <li class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6">
                                         <span class="font-bold text-secondary">08:00 AM</span>
                                         <span><strong>Radiator Springs Racers</strong> (Single Rider Line).</span>
                                     </li>
-                                    <li class="flex items-center gap-6">
+                                    <li class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6">
                                         <span class="font-bold text-secondary">10:00 AM</span>
                                         <span><strong>Grizzly River Run</strong> (The "Must-Do" early).</span>
                                     </li>
@@ -196,20 +233,20 @@
 
                 <!-- Day 2 -->
                 <div class="relative">
-                    <div class="absolute -top-12 -left-4 font-serif italic text-9xl text-primary opacity-5 pointer-events-none">02</div>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+                    <div class="absolute -top-8 -left-2 md:-top-12 md:-left-4 font-serif italic text-7xl md:text-9xl text-primary opacity-5 pointer-events-none">02</div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16">
                         <div>
-                            <h3 class="font-serif italic text-5xl text-primary mb-4">Tuesday</h3>
+                            <h3 class="font-serif italic text-4xl md:text-5xl text-primary mb-4">Tuesday</h3>
                             <p class="font-bold uppercase tracking-widest text-tertiary mb-6">Disneyland Park</p>
                         </div>
-                        <div class="md:col-span-2 space-y-8">
-                            <div class="bg-white p-10 rounded-2xl shadow-sm border-l-8 border-secondary">
-                                <ul class="space-y-6 body-lg">
-                                    <li class="flex items-center gap-6">
+                        <div class="md:col-span-2 space-y-6 md:space-y-8">
+                            <div class="bg-white p-6 md:p-10 rounded-2xl shadow-sm border-l-8 border-secondary">
+                                <ul class="space-y-4 md:space-y-6 body-lg text-sm md:text-base">
+                                    <li class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6">
                                         <span class="font-bold text-primary">08:00 AM</span>
                                         <span><strong>Peter Pan's Flight</strong> (First!). Then Fantasyland.</span>
                                     </li>
-                                    <li class="flex items-center gap-6">
+                                    <li class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6">
                                         <span class="font-bold text-primary">01:00 PM</span>
                                         <span><strong>Airbnb Break</strong> (Rest and Birthday Prep).</span>
                                     </li>
@@ -223,67 +260,63 @@
     </section>
 
     <!-- Snack Strategist Section -->
-    <section id="snacks" class="py-24 tier-2">
-        <div class="container mx-auto px-8 max-w-6xl text-center">
-            <h2 class="display-lg text-tertiary mb-16 italic">Snack Strategist <br> 2026 Edition</h2>
+    <section id="snacks" class="py-16 md:py-24 tier-2">
+        <div class="container mx-auto px-6 md:px-8 max-w-6xl text-center">
+            <h2 class="display-lg text-tertiary mb-12 md:mb-16 italic">Snack Strategist <br> 2026 Edition</h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 text-left">
                 <!-- Must Try -->
-                <div class="bg-surface p-8 rounded-2xl shadow-sm border-b-4 border-tertiary">
-                    <h3 class="headline-sm font-serif italic text-2xl text-secondary mb-4">🏆 Must-Try Icons</h3>
-                    <ul class="space-y-4 body-md">
-                        <li><strong>Mickey Macaron:</strong> #1 dessert (Raspberry Rose). Jolly Holiday.</li>
-                        <li><strong>Cheesy Garlic Bread:</strong> Now with Bratwurst version. Maurice’s Treats.</li>
-                        <li><strong>Birria Toasted Cheese:</strong> Gooey, beefy perfection. Jolly Holiday.</li>
+                <div class="bg-surface p-6 md:p-8 rounded-2xl shadow-sm border-b-4 border-tertiary card">
+                    <h3 class="font-serif italic text-xl md:text-2xl text-secondary mb-4">🏆 Must-Try Icons</h3>
+                    <ul class="space-y-3 md:space-y-4 text-sm md:text-base">
+                        <li><strong>Mickey Macaron:</strong> #1 dessert. Jolly Holiday.</li>
+                        <li><strong>Cheesy Garlic Bread:</strong> Maurice’s Treats.</li>
+                        <li><strong>Birria Toasted Cheese:</strong> Jolly Holiday.</li>
                     </ul>
                 </div>
                 <!-- 70th Anniversary -->
-                <div class="bg-primary p-8 rounded-2xl shadow-sm text-white">
-                    <h3 class="headline-sm font-serif italic text-2xl mb-4">🎂 70th Anniversary</h3>
-                    <ul class="space-y-4 body-md">
-                        <li><strong>Mickey Hat Cookie:</strong> Celebratory chocolate-dipped cookie.</li>
-                        <li><strong>Birthday Shortcake Macaron:</strong> Vanilla bean with a candle topper!</li>
+                <div class="bg-primary p-6 md:p-8 rounded-2xl shadow-sm text-white card">
+                    <h3 class="font-serif italic text-xl md:text-2xl mb-4">🎂 70th Anniversary</h3>
+                    <ul class="space-y-3 md:space-y-4 text-sm md:text-base">
+                        <li><strong>Mickey Hat Cookie:</strong> Chocolate-dipped cookie.</li>
+                        <li><strong>Shortcake Macaron:</strong> Vanilla bean with candle!</li>
                     </ul>
                 </div>
                 <!-- Savory Hits -->
-                <div class="bg-surface p-8 rounded-2xl shadow-sm border-b-4 border-primary">
-                    <h3 class="headline-sm font-serif italic text-2xl text-secondary mb-4">🥨 Salty & Savory</h3>
-                    <ul class="space-y-4 body-md">
-                        <li><strong>Banyan Beef Skewer:</strong> Spicy protein hit. Bengal Barbecue.</li>
-                        <li><strong>Quantum Pretzel:</strong> Massive and shareable. Pym Test Kitchen.</li>
-                        <li><strong>QuesaBirria Tacos:</strong> Best in DCA. Cocina Cucamonga.</li>
+                <div class="bg-surface p-6 md:p-8 rounded-2xl shadow-sm border-b-4 border-primary card">
+                    <h3 class="font-serif italic text-xl md:text-2xl text-secondary mb-4">🥨 Salty & Savory</h3>
+                    <ul class="space-y-3 md:space-y-4 text-sm md:text-base">
+                        <li><strong>Banyan Beef Skewer:</strong> Bengal Barbecue.</li>
+                        <li><strong>Quantum Pretzel:</strong> Pym Test Kitchen.</li>
+                        <li><strong>QuesaBirria Tacos:</strong> Cocina Cucamonga.</li>
                     </ul>
                 </div>
             </div>
 
-            <div class="mt-12 p-8 bg-surface-container-lowest rounded-2xl max-w-2xl mx-auto shadow-inner italic">
+            <div class="mt-8 md:mt-12 p-6 md:p-8 bg-surface-container-lowest rounded-2xl max-w-2xl mx-auto shadow-inner italic text-sm md:text-base">
                 <p class="body-lg text-secondary">"Mobile order early (slots for Jolly Holiday fill up by 10 AM!) and share everything to try more!"</p>
             </div>
         </div>
     </section>
 
     <!-- Gift Shop Strategy Section -->
-    <section id="gifts" class="py-24 tier-3">
-        <div class="container mx-auto px-8 max-w-6xl">
-            <h2 class="display-lg text-primary mb-16 text-center italic">The Souvenir <br> Expedition</h2>
+    <section id="gifts" class="py-16 md:py-24 tier-3">
+        <div class="container mx-auto px-6 md:px-8 max-w-6xl">
+            <h2 class="display-lg text-primary mb-12 md:mb-16 text-center italic">The Souvenir <br> Expedition</h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
                 <!-- For the Boy -->
                 <div class="relative">
-                    <div class="bg-secondary p-10 rounded-2xl text-white relative z-10 shadow-xl transform -rotate-1">
+                    <div class="bg-secondary p-8 md:p-10 rounded-2xl text-white relative z-10 shadow-xl transform md:-rotate-1">
                         <h3 class="headline-md mb-6 italic">For the Birthday Boy: <br> Lightsabers</h3>
-                        <div class="space-y-6">
+                        <div class="space-y-4 md:space-y-6">
                             <div class="p-4 bg-white/10 rounded-lg">
-                                <h4 class="font-bold text-tertiary-container uppercase text-sm tracking-widest mb-1">The Splurge</h4>
-                                <p class="body-md"><strong>Savi's Workshop:</strong> Immersive custom build ($250).</p>
+                                <h4 class="font-bold text-tertiary-container uppercase text-xs tracking-widest mb-1">The Splurge</h4>
+                                <p class="text-sm md:text-base"><strong>Savi's Workshop:</strong> Immersive custom build.</p>
                             </div>
                             <div class="p-4 bg-white/10 rounded-lg">
-                                <h4 class="font-bold text-tertiary-container uppercase text-sm tracking-widest mb-1">The Collector</h4>
-                                <p class="body-md"><strong>Dok-Ondar's:</strong> Legacy Lightsabers (Exact replicas).</p>
-                            </div>
-                            <div class="p-4 bg-white/10 rounded-lg">
-                                <h4 class="font-bold text-tertiary-container uppercase text-sm tracking-widest mb-1">The Budget Builder</h4>
-                                <p class="body-md"><strong>Star Trader (Tomorrowland):</strong> Plastic builds ($30-$45).</p>
+                                <h4 class="font-bold text-tertiary-container uppercase text-xs tracking-widest mb-1">The Budget Builder</h4>
+                                <p class="text-sm md:text-base"><strong>Star Trader:</strong> Plastic builds ($30-$45).</p>
                             </div>
                         </div>
                     </div>
@@ -291,20 +324,16 @@
 
                 <!-- For the Girlfriend -->
                 <div class="relative">
-                    <div class="bg-primary p-10 rounded-2xl text-white relative z-10 shadow-xl transform rotate-1">
+                    <div class="bg-primary p-8 md:p-10 rounded-2xl text-white relative z-10 shadow-xl transform md:rotate-1">
                         <h3 class="headline-md mb-6 italic">For the Girlfriend: <br> Alice in Wonderland</h3>
-                        <div class="space-y-6">
+                        <div class="space-y-4 md:space-y-6">
                             <div class="p-4 bg-white/10 rounded-lg">
-                                <h4 class="font-bold text-primary-container uppercase text-sm tracking-widest mb-1">Accessories</h4>
-                                <p class="body-md"><strong>The Mad Hatter:</strong> Alice-themed ears (embroider-ready!).</p>
+                                <h4 class="font-bold text-primary-container uppercase text-xs tracking-widest mb-1">Accessories</h4>
+                                <p class="text-sm md:text-base"><strong>The Mad Hatter:</strong> Alice-themed ears.</p>
                             </div>
                             <div class="p-4 bg-white/10 rounded-lg">
-                                <h4 class="font-bold text-primary-container uppercase text-sm tracking-widest mb-1">Home Decor</h4>
-                                <p class="body-md"><strong>China Closet (Main St):</strong> Beautiful tea sets and mugs.</p>
-                            </div>
-                            <div class="p-4 bg-white/10 rounded-lg">
-                                <h4 class="font-bold text-primary-container uppercase text-sm tracking-widest mb-1">The Fine Art</h4>
-                                <p class="body-md"><strong>WonderGround Gallery:</strong> Stylized Alice pop-art.</p>
+                                <h4 class="font-bold text-primary-container uppercase text-xs tracking-widest mb-1">The Fine Art</h4>
+                                <p class="text-sm md:text-base"><strong>WonderGround Gallery:</strong> Stylized Alice art.</p>
                             </div>
                         </div>
                     </div>
@@ -314,16 +343,16 @@
     </section>
 
     <!-- The Commissary (Meal Plan) -->
-    <section class="py-24 bg-secondary text-white relative">
-        <div class="container mx-auto px-8 max-w-6xl text-center">
+    <section class="py-16 md:py-24 bg-secondary text-white relative">
+        <div class="container mx-auto px-6 md:px-8 max-w-6xl text-center">
             <h2 class="display-lg text-primary-container mb-12">The Commissary</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto text-left">
-                <div class="bg-white/10 p-8 rounded-2xl">
-                    <h3 class="font-serif italic text-2xl mb-4">Airbnb Essentials</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto text-left">
+                <div class="bg-white/10 p-6 md:p-8 rounded-2xl hover:bg-white/20 transition-colors">
+                    <h3 class="font-serif italic text-xl md:text-2xl mb-4">Airbnb Essentials</h3>
                     <p class="text-sm opacity-80">Deli meats, bagels, frozen pizzas, and plenty of snacks for the park bag.</p>
                 </div>
-                <div class="bg-white/10 p-8 rounded-2xl">
-                    <h3 class="font-serif italic text-2xl mb-4">Park Feast</h3>
+                <div class="bg-white/10 p-6 md:p-8 rounded-2xl hover:bg-white/20 transition-colors">
+                    <h3 class="font-serif italic text-xl md:text-2xl mb-4">Park Feast</h3>
                     <p class="text-sm opacity-80">Fried Chicken at Plaza Inn or Giant Sandwiches at Pym Test Kitchen (Shareable!).</p>
                 </div>
             </div>
@@ -331,29 +360,29 @@
     </section>
 
     <!-- The Survival Kit (Checklist) -->
-    <section id="packing" class="py-24 tier-3">
-        <div class="container mx-auto px-8 max-w-5xl">
-            <h2 class="display-lg text-tertiary mb-16 text-center">Adventure Kit</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <section id="packing" class="py-16 md:py-24 tier-3">
+        <div class="container mx-auto px-6 md:px-8 max-w-5xl">
+            <h2 class="display-lg text-tertiary mb-12 md:mb-16 text-center">Adventure Kit</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
                 <div class="card bg-white">
-                    <h4 class="font-serif italic text-xl text-secondary mb-4">Tech</h4>
-                    <ul class="space-y-2 text-sm opacity-80">
+                    <h4 class="font-serif italic text-lg md:text-xl text-secondary mb-4">Tech</h4>
+                    <ul class="space-y-2 text-xs md:text-sm opacity-80">
                         <li>☐ Power Bank (Critical)</li>
                         <li>☐ Charging Cable</li>
                         <li>☐ Disneyland App</li>
                     </ul>
                 </div>
                 <div class="card bg-white">
-                    <h4 class="font-serif italic text-xl text-secondary mb-4">Comfort</h4>
-                    <ul class="space-y-2 text-sm opacity-80">
+                    <h4 class="font-serif italic text-lg md:text-xl text-secondary mb-4">Comfort</h4>
+                    <ul class="space-y-2 text-xs md:text-sm opacity-80">
                         <li>☐ Cooling Towels</li>
                         <li>☐ Water Bottles</li>
                         <li>☐ Extra Socks</li>
                     </ul>
                 </div>
-                <div class="card bg-white">
-                    <h4 class="font-serif italic text-xl text-secondary mb-4">Pro Tips</h4>
-                    <ul class="space-y-2 text-sm opacity-80">
+                <div class="card bg-white sm:col-span-2 md:col-span-1">
+                    <h4 class="font-serif italic text-lg md:text-xl text-secondary mb-4">Pro Tips</h4>
+                    <ul class="space-y-2 text-xs md:text-sm opacity-80">
                         <li>☐ Cheap Ponchos</li>
                         <li>☐ Ziploc Bags</li>
                         <li>☐ Penny Change</li>
@@ -364,12 +393,13 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-24 tier-1 text-center">
-        <div class="max-w-2xl mx-auto px-8">
-            <h2 class="display-lg text-primary mb-8 italic text-6xl">Enjoy the Magic</h2>
-            <p class="font-serif italic opacity-40">Created for the Big 10th Birthday Expedition | April 2026</p>
+    <footer class="py-16 md:py-24 tier-1 text-center">
+        <div class="max-w-2xl mx-auto px-6 md:px-8">
+            <h2 class="display-lg text-primary mb-8 italic text-5xl md:text-6xl">Enjoy the Magic</h2>
+            <p class="font-serif italic opacity-40 text-sm md:text-base">Created for the Big 10th Birthday Expedition | April 2026</p>
         </div>
     </footer>
 
 </body>
 </html>
+
