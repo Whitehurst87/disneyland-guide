@@ -6,7 +6,7 @@
     <title>The Mid-Century Souvenir | Disneyland Adventure</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Work+Sans:ital,wght@0,1000..900;1,100..900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -88,13 +88,10 @@
 </head>
 <body class="font-sans antialiased overflow-x-hidden">
 
-    <!-- Hero -->
     <header class="relative min-h-screen flex items-center justify-center p-6 md:p-12 overflow-hidden tier-1">
-        <!-- Magic Background Elements -->
         <div class="absolute top-20 -left-10 w-64 h-64 bg-primary-container rounded-full blur-3xl opacity-20 animate-float"></div>
         <div class="absolute bottom-20 -right-10 w-80 h-80 bg-secondary-container rounded-full blur-3xl opacity-20 animate-float-slow"></div>
         
-        <!-- Pixie Dust Sparkles -->
         <div class="sparkle top-1/4 left-1/4 animate-twinkle" style="animation-delay: 0s"></div>
         <div class="sparkle top-1/3 right-1/4 animate-twinkle" style="animation-delay: 1s"></div>
         <div class="sparkle bottom-1/4 left-1/3 animate-twinkle" style="animation-delay: 2s"></div>
@@ -110,6 +107,7 @@
             <div class="flex flex-wrap gap-3 md:gap-4 justify-center px-2">
                 <a href="#birthday" class="btn-primary text-sm md:text-base">Birthday Strategy</a>
                 <a href="#itinerary" class="btn-primary text-sm md:text-base" style="background: #336381">Daily Playbook</a>
+                <a href="#advanced" class="btn-primary text-sm md:text-base" style="background: #9a3f60">Advanced Playbook</a>
                 <a href="#snacks" class="btn-primary text-sm md:text-base" style="background: #735c00">Snack Strategist</a>
                 <a href="#gifts" class="btn-primary text-sm md:text-base" style="background: #e37a9d">Gift Strategy</a>
                 <a href="#packing" class="btn-primary text-sm md:text-base" style="background: #735c00">The Checklist</a>
@@ -123,7 +121,6 @@
         </div>
     </header>
 
-    <!-- Birthday Magic Section -->
     <section id="birthday" class="py-16 md:py-24 tier-0">
         <div class="container mx-auto px-6 md:px-8 max-w-5xl">
             <div class="flex flex-col md:flex-row gap-12 md:gap-16 items-center">
@@ -132,18 +129,18 @@
                     <div class="space-y-6 md:space-y-8">
                         <div class="bg-surface-container-low p-6 md:p-8 rounded-xl relative hover:shadow-md transition-shadow">
                             <span class="absolute -top-3 -left-3 md:-top-4 md:-left-4 bg-tertiary text-white w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full font-bold text-sm md:text-base">1</span>
-                            <h3 class="font-serif text-xl md:text-2xl text-secondary mb-2 italic">The Button</h3>
-                            <p class="body-lg opacity-80 text-sm md:text-base">Head to <strong>City Hall</strong> or any shop first thing Tuesday. Ask for a free "Happy Birthday" button. The Cast Members will wish him a happy birthday all day!</p>
+                            <h3 class="font-serif text-xl md:text-2xl text-secondary mb-2 italic">The Button & Academy</h3>
+                            <p class="body-lg opacity-80 text-sm md:text-base">Get the free "Birthday" button at City Hall. Then, hit the <strong>Animation Academy (DCA)</strong>. It's a free drawing class where he'll leave with a hand-drawn souvenir.</p>
                         </div>
                         <div class="bg-surface-container-low p-6 md:p-8 rounded-xl relative hover:shadow-md transition-shadow">
                             <span class="absolute -top-3 -left-3 md:-top-4 md:-left-4 bg-tertiary text-white w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full font-bold text-sm md:text-base">2</span>
                             <h3 class="font-serif text-xl md:text-2xl text-secondary mb-2 italic">Budget Treats</h3>
-                            <p class="body-lg opacity-80 text-sm md:text-base">Skip the $150 dinner. Grab a <strong>Dole Whip</strong> or <strong>Mickey Beignets</strong>. Bring your own small birthday candle for the perfect photo moment.</p>
+                            <p class="body-lg opacity-80 text-sm md:text-base">Grab <strong>Mickey Beignets</strong>. Bring your own candle. Pro-tip: Stop at <strong>Harbor Galley</strong> for warm cookies (shareable and cheap!).</p>
                         </div>
                         <div class="bg-surface-container-low p-6 md:p-8 rounded-xl relative hover:shadow-md transition-shadow">
                             <span class="absolute -top-3 -left-3 md:-top-4 md:-left-4 bg-tertiary text-white w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full font-bold text-sm md:text-base">3</span>
                             <h3 class="font-serif text-xl md:text-2xl text-secondary mb-2 italic">Free Surprises</h3>
-                            <p class="body-lg opacity-80 text-sm md:text-base">Ask for birthday stickers! In <strong>Galaxy's Edge</strong>, mention the birthday to the Resistance or First Order—they often have special interactions.</p>
+                            <p class="body-lg opacity-80 text-sm md:text-base">Ask for birthday stickers! Use the <strong>Play Disney App</strong> in Galaxy's Edge to "hack" panels—it's high-engagement fun for zero cost.</p>
                         </div>
                     </div>
                 </div>
@@ -159,26 +156,44 @@
         </div>
     </section>
 
-    <!-- Lightning Lane Rules -->
     <section class="py-16 md:py-24 tier-2">
         <div class="container mx-auto px-6 md:px-8 max-w-6xl text-center">
             <h2 class="display-lg text-secondary mb-12 md:mb-16">Mastering the <br> Lightning Lane</h2>
             
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 text-left">
+                <div class="bg-surface-container p-6 rounded-2xl border-t-4 border-secondary">
+                    <h4 class="font-serif italic text-secondary text-xl mb-2">Multipass</h4>
+                    <p class="text-sm opacity-80 leading-relaxed">The daily add-on ($34–$40+). Book one-at-a-time major rides once scanned into the park.</p>
+                </div>
+                <div class="bg-surface-container p-6 rounded-2xl border-t-4 border-primary">
+                    <h4 class="font-serif italic text-primary text-xl mb-2">Single Pass</h4>
+                    <p class="text-sm opacity-80 leading-relaxed">"Fancy Rides" not in Multipass. Individual purchase for Rise of the Resistance and Radiator Springs.</p>
+                </div>
+                <div class="bg-surface-container p-6 rounded-2xl border-t-4 border-tertiary">
+                    <h4 class="font-serif italic text-tertiary text-xl mb-2">Premier Pass</h4>
+                    <p class="text-sm opacity-80 leading-relaxed">The high-cost ($299+) ultimate option. No booking required; walk onto any LL ride once.</p>
+                </div>
+            </div>
+
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-12 md:mb-16 text-left">
                 <div class="card bg-white">
-                    <h3 class="font-serif italic text-primary text-xl md:text-2xl mb-4 underline">The Tech Rules</h3>
+                    <h3 class="font-serif italic text-primary text-xl md:text-2xl mb-4 underline">The Mammoth Meta</h3>
                     <ul class="space-y-4 md:space-y-6 body-lg text-sm md:text-base">
                         <li class="flex gap-4">
                             <span class="text-tertiary">★</span>
-                            <span><strong>The 120-Min Rule:</strong> Book as soon as you tap in, OR every 2 hours. Set a phone timer.</span>
+                            <span><strong>The Fiddle Fattle:</strong> Don't settle for a 6PM slot. Go to "Modify Plan" and refresh (pull down) until a sooner time pops up.</span>
                         </li>
                         <li class="flex gap-4">
                             <span class="text-tertiary">★</span>
-                            <span><strong>Free Photos:</strong> LLMP includes <strong>Unlimited PhotoPass</strong>. Stop at every photographer!</span>
+                            <span><strong>The 119-Min Rule:</strong> If your LL is far out, set a phone timer for 119 mins. You can book your next one the second it rings.</span>
                         </li>
                         <li class="flex gap-4">
                             <span class="text-tertiary">★</span>
-                            <span><strong>Virtual Queue:</strong> Tiana's Bayou requires joining at 7 AM or 1 PM in the app.</span>
+                            <span><strong>Pin Your Bangers:</strong> In the "My Day" tab, select only your top 5 rides to keep them at the top of your tip board.</span>
+                        </li>
+                        <li class="flex gap-4">
+                            <span class="text-tertiary">★</span>
+                            <span><strong>PhotoPass Value:</strong> Stop for every photographer! Multi Pass includes all downloads. Make these the main souvenir.</span>
                         </li>
                     </ul>
                 </div>
@@ -194,19 +209,217 @@
                             <span class="text-tertiary-container">✔</span>
                             <span><strong>Rise of the Resistance:</strong> Either "Rope Drop" or ride during fireworks at 9 PM.</span>
                         </li>
+                        <li class="flex gap-4">
+                            <span class="text-tertiary-container">✔</span>
+                            <span><strong>Filler Strategy:</strong> Use the <strong>Railroad</strong>, <strong>Pirates</strong>, or <strong>Mr. Lincoln</strong> to bridge gaps between Lightning Lanes.</span>
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Daily Playbook -->
+    <section id="advanced" class="py-16 md:py-24 tier-3">
+        <div class="container mx-auto px-6 md:px-8 max-w-6xl">
+            <div class="text-center mb-12 md:mb-16">
+                <span class="badge-gold mb-6 inline-block" style="animation: none;">Mammoth Club Insider Intel</span>
+                <h2 class="display-lg text-primary mt-6 italic">The Advanced <br> Playbook</h2>
+                <p class="body-lg text-secondary max-w-2xl mx-auto mt-4 opacity-70 text-sm md:text-base">Five pro strategies that separate the tourists from the locals.</p>
+            </div>
+
+            <div class="space-y-10 md:space-y-12">
+
+                <!-- 1. Golden Hour -->
+                <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
+                    <div class="bg-tertiary px-6 md:px-8 py-4 flex items-center gap-4">
+                        <span class="text-white font-serif italic text-3xl md:text-4xl opacity-20 font-bold leading-none">01</span>
+                        <h3 class="font-serif italic text-xl md:text-2xl text-white">The "Golden Hour" Rope Drop</h3>
+                        <span class="ml-auto text-xs font-bold uppercase tracking-widest bg-white/20 text-white px-3 py-1 rounded-full">Standby Only</span>
+                    </div>
+                    <div class="p-6 md:p-8 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 text-sm md:text-base">
+                        <div class="bg-surface-container-low rounded-xl p-5 border-l-4 border-tertiary">
+                            <h4 class="font-bold text-secondary mb-2">⏱ The First Hour Rule</h4>
+                            <p class="opacity-80 leading-relaxed">Do <em>not</em> use a Lightning Lane in the first 60 minutes of the day. Lines are naturally short. Hit the "Big Three" of a land (Space Mountain, Star Tours, Buzz) via the standby line.</p>
+                        </div>
+                        <div class="bg-surface-container-low rounded-xl p-5 border-l-4 border-secondary">
+                            <h4 class="font-bold text-secondary mb-2">📱 Save the Multi Pass</h4>
+                            <p class="opacity-80 leading-relaxed">Save your first Lightning Lane selection for a return time around 10:00 AM. This lets you "stack" reservations for when the park hits peak capacity and waits hit 60+ minutes.</p>
+                        </div>
+                        <div class="bg-primary/10 rounded-xl p-5 border-l-4 border-primary">
+                            <h4 class="font-bold text-primary mb-2">🚫 Skip Peter Pan (at open)</h4>
+                            <p class="opacity-80 leading-relaxed">Unless you're at the very front of the rope, the line hits 45 minutes within <em>three minutes</em> of opening. Save it for right before park close — or hit four other rides in the same time.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. 70th Anniversary Exclusives -->
+                <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
+                    <div class="bg-primary px-6 md:px-8 py-4 flex items-center gap-4">
+                        <span class="text-white font-serif italic text-3xl md:text-4xl opacity-20 font-bold leading-none">02</span>
+                        <h3 class="font-serif italic text-xl md:text-2xl text-white">The "Must-See" 70th Anniversary Exclusives</h3>
+                        <span class="ml-auto text-xs font-bold uppercase tracking-widest bg-white/20 text-white px-3 py-1 rounded-full">Free</span>
+                    </div>
+                    <div class="p-6 md:p-8 space-y-5 text-sm md:text-base">
+                        <div class="flex gap-4 items-start">
+                            <span class="text-primary text-xl mt-0.5 flex-shrink-0">🌊</span>
+                            <div>
+                                <h4 class="font-bold text-secondary">World of Color – Happiness: Catch the Muppets Pre-Show</h4>
+                                <p class="opacity-80 leading-relaxed mt-1">A limited-time 70th anniversary inclusion — considered the team's "must-see." Join the virtual queue in the app at <strong>12:00 PM sharp</strong> to land a "Yellow" or "Blue" zone spot without paying for a dessert party.</p>
+                            </div>
+                        </div>
+                        <hr class="border-surface-container">
+                        <div class="flex gap-4 items-start">
+                            <span class="text-primary text-xl mt-0.5 flex-shrink-0">🎆</span>
+                            <div>
+                                <h4 class="font-bold text-secondary">Paint the Night Parade</h4>
+                                <p class="opacity-80 leading-relaxed mt-1">This iconic parade is back. Instead of fighting for a spot on Main Street, head to the <strong>Small World promenade</strong>. Usually less crowded, and you can see the floats curve around the plaza.</p>
+                            </div>
+                        </div>
+                        <hr class="border-surface-container">
+                        <div class="flex gap-4 items-start">
+                            <span class="text-primary text-xl mt-0.5 flex-shrink-0">🎠</span>
+                            <div>
+                                <h4 class="font-bold text-secondary">Character Cavalcade: Celebrate Happy Cavalcade</h4>
+                                <p class="opacity-80 leading-relaxed mt-1">Shorter than a full parade but features <strong>rare characters</strong> — like Duffy and ShellieMay — that haven't been seen in years.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Dining & Value Hacks -->
+                <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
+                    <div class="bg-secondary px-6 md:px-8 py-4 flex items-center gap-4">
+                        <span class="text-white font-serif italic text-3xl md:text-4xl opacity-20 font-bold leading-none">03</span>
+                        <h3 class="font-serif italic text-xl md:text-2xl text-white">Advanced Dining & Value Hacks</h3>
+                        <span class="ml-auto text-xs font-bold uppercase tracking-widest bg-white/20 text-white px-3 py-1 rounded-full">Snack Strategist</span>
+                    </div>
+                    <div class="p-6 md:p-8 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 text-sm md:text-base">
+                        <div class="bg-surface-container-low rounded-xl p-5">
+                            <div class="text-2xl mb-2">🥪</div>
+                            <h4 class="font-bold text-secondary mb-1">The "Snack-Size" Monte Cristo</h4>
+                            <p class="opacity-80 leading-relaxed">Get the famous Monte Cristo at <strong>Royal Street Veranda</strong> as a "snack" portion. Significantly cheaper than Blue Bayou's sit-down version — still massive and easily shareable for two.</p>
+                        </div>
+                        <div class="bg-surface-container-low rounded-xl p-5">
+                            <div class="text-2xl mb-2">☕</div>
+                            <h4 class="font-bold text-secondary mb-1">Cold Brew Black Caf (Galaxy's Edge)</h4>
+                            <p class="opacity-80 leading-relaxed">Skip the Starbucks line on Main Street. Head to <strong>Docking Bay 7</strong>. Faster, topped with sweet cream cheese and chocolate puffs — widely considered the best caffeine value in the park.</p>
+                        </div>
+                        <div class="bg-surface-container-low rounded-xl p-5">
+                            <div class="text-2xl mb-2">🍿</div>
+                            <h4 class="font-bold text-secondary mb-1">The "Fresh" Popcorn Secret</h4>
+                            <p class="opacity-80 leading-relaxed">Not all popcorn is equal. The <strong>Silver Popcorn Cart at the end of Buena Vista Street (DCA)</strong> is the only one that sells fresh caramel corn made on-site. Everywhere else is pre-packaged.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Hidden Gems for Pacing -->
+                <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
+                    <div class="bg-primary px-6 md:px-8 py-4 flex items-center gap-4">
+                        <span class="text-white font-serif italic text-3xl md:text-4xl opacity-20 font-bold leading-none">04</span>
+                        <h3 class="font-serif italic text-xl md:text-2xl text-white">Hidden Gems for "Pacing"</h3>
+                        <span class="ml-auto text-xs font-bold uppercase tracking-widest bg-white/20 text-white px-3 py-1 rounded-full">2 PM Wall Busters</span>
+                    </div>
+                    <div class="p-6 md:p-8 space-y-5 text-sm md:text-base">
+                        <div class="flex gap-4 items-start">
+                            <span class="text-xl mt-0.5 flex-shrink-0">🏰</span>
+                            <div>
+                                <h4 class="font-bold text-secondary">The Beast's Library</h4>
+                                <p class="opacity-80 leading-relaxed mt-1">Inside the Animation Academy building, head to the <strong>Sorcerer's Workshop</strong>. There's a hidden "Beast's Library" room that is perfectly themed, <strong>air-conditioned</strong>, and usually empty. A great spot to vibe and reset.</p>
+                            </div>
+                        </div>
+                        <hr class="border-surface-container">
+                        <div class="flex gap-4 items-start">
+                            <span class="text-xl mt-0.5 flex-shrink-0">🎺</span>
+                            <div>
+                                <h4 class="font-bold text-secondary">The Flag Retreat Ceremony (~4:30 PM, Town Square)</h4>
+                                <p class="opacity-80 leading-relaxed mt-1">A moving 10-minute ceremony with the Disneyland Band and Dapper Dans. Costs nothing — and it's a classic "old school" Disney moment.</p>
+                            </div>
+                        </div>
+                        <hr class="border-surface-container">
+                        <div class="flex gap-4 items-start">
+                            <span class="text-xl mt-0.5 flex-shrink-0">🪄</span>
+                            <div>
+                                <h4 class="font-bold text-secondary">Magic Mirror (Animation Building)</h4>
+                                <p class="opacity-80 leading-relaxed mt-1">Uses motion-sensing tech to tell you which Disney character you are — a free interactive bit that's great for kids (and adults who need a break from the sun).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Final Pro-Tip -->
+                <div class="bg-tertiary rounded-2xl shadow-sm overflow-hidden">
+                    <div class="px-6 md:px-8 py-4 flex items-center gap-4">
+                        <span class="text-white font-serif italic text-3xl md:text-4xl opacity-20 font-bold leading-none">05</span>
+                        <h3 class="font-serif italic text-xl md:text-2xl text-white">Final "Pro-Tip" for Efficiency</h3>
+                        <span class="ml-auto text-xs font-bold uppercase tracking-widest bg-white/20 text-white px-3 py-1 rounded-full">⚡ Critical</span>
+                    </div>
+                    <div class="p-6 md:p-8 text-white text-sm md:text-base">
+                        <div class="flex gap-5 items-start">
+                            <div class="bg-white/10 rounded-2xl p-4 text-center flex-shrink-0 w-24">
+                                <div class="text-3xl font-bold text-tertiary-container">119</div>
+                                <div class="text-xs uppercase tracking-wider mt-1 opacity-80">Minutes</div>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-tertiary-container text-lg mb-2">The 119-Minute Alarm</h4>
+                                <p class="opacity-90 leading-relaxed">If you book a Lightning Lane with a return time 4 hours away, the app won't let you book another one — until <strong>2 hours have passed</strong>. Set a timer on your phone for <strong>1 hour and 59 minutes</strong>. The moment it goes off, book a second Lightning Lane for a sooner time, effectively <em>holding two at once</em>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 tier-0">
+        <div class="container mx-auto px-6 md:px-8 max-w-6xl">
+            <h2 class="display-lg text-primary mb-12 text-center italic">The Objective <br> Must-Ride Rankings</h2>
+            <div class="overflow-x-auto bg-white rounded-2xl shadow-sm">
+                <table class="w-full text-left border-collapse">
+                    <thead class="bg-surface-container-low">
+                        <tr>
+                            <th class="p-6 font-serif italic text-secondary">Attraction</th>
+                            <th class="p-6 font-serif italic text-secondary">Score</th>
+                            <th class="p-6 font-serif italic text-secondary">Pro Note</th>
+                        </tr>
+                    </thead>
+                    <tbody class="body-lg text-sm md:text-base">
+                        <tr class="border-t border-surface-container">
+                            <td class="p-6 font-bold">Rise of the Resistance</td>
+                            <td class="p-6 text-tertiary font-bold">10/10</td>
+                            <td class="p-6 opacity-80">The peak of Imagineering. A 20-min multi-system experience.</td>
+                        </tr>
+                        <tr class="border-t border-surface-container">
+                            <td class="p-6 font-bold">Indiana Jones Adventure</td>
+                            <td class="p-6 text-tertiary font-bold">10/10</td>
+                            <td class="p-6 opacity-80">Unique EMV tech and massive set pieces.</td>
+                        </tr>
+                        <tr class="border-t border-surface-container">
+                            <td class="p-6 font-bold">Pirates of the Caribbean</td>
+                            <td class="p-6 text-tertiary font-bold">10/10</td>
+                            <td class="p-6 opacity-80">Significantly longer/better than the Florida version.</td>
+                        </tr>
+                        <tr class="border-t border-surface-container">
+                            <td class="p-6 font-bold">Space Mountain</td>
+                            <td class="p-6 text-tertiary font-bold">9/10</td>
+                            <td class="p-6 opacity-80">Smoother ride with a synchronized onboard soundtrack.</td>
+                        </tr>
+                        <tr class="border-t border-surface-container">
+                            <td class="p-6 font-bold">Matterhorn Bobsleds</td>
+                            <td class="p-6 text-tertiary font-bold">8.5/10</td>
+                            <td class="p-6 opacity-80">World's first tubular steel coaster; unique to DL.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
     <section id="itinerary" class="py-16 md:py-24 tier-1">
         <div class="container mx-auto px-6 md:px-8 max-w-6xl">
             <h2 class="display-lg text-primary mb-16 md:mb-24 text-center">The Daily Playbook</h2>
 
             <div class="space-y-24 md:space-y-48">
-                <!-- Day 1 -->
                 <div class="relative">
                     <div class="absolute -top-8 -left-2 md:-top-12 md:-left-4 font-serif italic text-7xl md:text-9xl text-secondary opacity-5 pointer-events-none">01</div>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16">
@@ -219,11 +432,11 @@
                                 <ul class="space-y-4 md:space-y-6 body-lg text-sm md:text-base">
                                     <li class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6">
                                         <span class="font-bold text-secondary">08:00 AM</span>
-                                        <span><strong>Radiator Springs Racers</strong> (Single Rider Line).</span>
+                                        <span><strong>Radiator Springs Racers</strong> (Single Rider). Book <strong>Guardians</strong> immediately.</span>
                                     </li>
                                     <li class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6">
                                         <span class="font-bold text-secondary">10:00 AM</span>
-                                        <span><strong>Grizzly River Run</strong> (The "Must-Do" early).</span>
+                                        <span><strong>Grizzly River Run</strong>. Use <strong>Filler:</strong> Ariel's Undersea Adventure between LLs.</span>
                                     </li>
                                 </ul>
                             </div>
@@ -231,7 +444,6 @@
                     </div>
                 </div>
 
-                <!-- Day 2 -->
                 <div class="relative">
                     <div class="absolute -top-8 -left-2 md:-top-12 md:-left-4 font-serif italic text-7xl md:text-9xl text-primary opacity-5 pointer-events-none">02</div>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16">
@@ -244,11 +456,11 @@
                                 <ul class="space-y-4 md:space-y-6 body-lg text-sm md:text-base">
                                     <li class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6">
                                         <span class="font-bold text-primary">08:00 AM</span>
-                                        <span><strong>Peter Pan's Flight</strong> (First!). Then Fantasyland.</span>
+                                        <span><strong>Peter Pan's Flight</strong> (First!). Then book <strong>Space Mountain</strong> and Fiddle Fattle for a 9AM slot.</span>
                                     </li>
                                     <li class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6">
                                         <span class="font-bold text-primary">01:00 PM</span>
-                                        <span><strong>Airbnb Break</strong> (Rest and Birthday Prep).</span>
+                                        <span><strong>Airbnb Break</strong>. Catch the <strong>Philharmonic Band</strong> on the way out for the 70th Medley.</span>
                                     </li>
                                 </ul>
                             </div>
@@ -259,22 +471,19 @@
         </div>
     </section>
 
-    <!-- Snack Strategist Section -->
     <section id="snacks" class="py-16 md:py-24 tier-2">
         <div class="container mx-auto px-6 md:px-8 max-w-6xl text-center">
             <h2 class="display-lg text-tertiary mb-12 md:mb-16 italic">Snack Strategist <br> 2026 Edition</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 text-left">
-                <!-- Must Try -->
                 <div class="bg-surface p-6 md:p-8 rounded-2xl shadow-sm border-b-4 border-tertiary card">
                     <h3 class="font-serif italic text-xl md:text-2xl text-secondary mb-4">🏆 Must-Try Icons</h3>
                     <ul class="space-y-3 md:space-y-4 text-sm md:text-base">
-                        <li><strong>Mickey Macaron:</strong> #1 dessert. Jolly Holiday.</li>
-                        <li><strong>Cheesy Garlic Bread:</strong> Maurice’s Treats.</li>
-                        <li><strong>Birria Toasted Cheese:</strong> Jolly Holiday.</li>
+                        <li><strong>Breakfast Chimichanga:</strong> Near Big Thunder. Sells out by 9:30 AM!</li>
+                        <li><strong>Harbor Galley Cookies:</strong> Warm & shareable.</li>
+                        <li><strong>Mickey Macaron:</strong> Jolly Holiday.</li>
                     </ul>
                 </div>
-                <!-- 70th Anniversary -->
                 <div class="bg-primary p-6 md:p-8 rounded-2xl shadow-sm text-white card">
                     <h3 class="font-serif italic text-xl md:text-2xl mb-4">🎂 70th Anniversary</h3>
                     <ul class="space-y-3 md:space-y-4 text-sm md:text-base">
@@ -282,30 +491,27 @@
                         <li><strong>Shortcake Macaron:</strong> Vanilla bean with candle!</li>
                     </ul>
                 </div>
-                <!-- Savory Hits -->
                 <div class="bg-surface p-6 md:p-8 rounded-2xl shadow-sm border-b-4 border-primary card">
                     <h3 class="font-serif italic text-xl md:text-2xl text-secondary mb-4">🥨 Salty & Savory</h3>
                     <ul class="space-y-3 md:space-y-4 text-sm md:text-base">
                         <li><strong>Banyan Beef Skewer:</strong> Bengal Barbecue.</li>
-                        <li><strong>Quantum Pretzel:</strong> Pym Test Kitchen.</li>
+                        <li><strong>Quantum Pretzel:</strong> Pym Test Kitchen (Giant!).</li>
                         <li><strong>QuesaBirria Tacos:</strong> Cocina Cucamonga.</li>
                     </ul>
                 </div>
             </div>
 
             <div class="mt-8 md:mt-12 p-6 md:p-8 bg-surface-container-lowest rounded-2xl max-w-2xl mx-auto shadow-inner italic text-sm md:text-base">
-                <p class="body-lg text-secondary">"Mobile order early (slots for Jolly Holiday fill up by 10 AM!) and share everything to try more!"</p>
+                <p class="body-lg text-secondary">"Mobile order early (slots fill by 10 AM!) and use the <strong>Free Water Hack:</strong> Ask for a cup of ice water at any quick-service."</p>
             </div>
         </div>
     </section>
 
-    <!-- Gift Shop Strategy Section -->
     <section id="gifts" class="py-16 md:py-24 tier-3">
         <div class="container mx-auto px-6 md:px-8 max-w-6xl">
             <h2 class="display-lg text-primary mb-12 md:mb-16 text-center italic">The Souvenir <br> Expedition</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
-                <!-- For the Boy -->
                 <div class="relative">
                     <div class="bg-secondary p-8 md:p-10 rounded-2xl text-white relative z-10 shadow-xl transform md:-rotate-1">
                         <h3 class="headline-md mb-6 italic">For the Birthday Boy: <br> Lightsabers</h3>
@@ -322,7 +528,6 @@
                     </div>
                 </div>
 
-                <!-- For the Girlfriend -->
                 <div class="relative">
                     <div class="bg-primary p-8 md:p-10 rounded-2xl text-white relative z-10 shadow-xl transform md:rotate-1">
                         <h3 class="headline-md mb-6 italic">For the Girlfriend: <br> Alice in Wonderland</h3>
@@ -342,14 +547,13 @@
         </div>
     </section>
 
-    <!-- The Commissary (Meal Plan) -->
     <section class="py-16 md:py-24 bg-secondary text-white relative">
         <div class="container mx-auto px-6 md:px-8 max-w-6xl text-center">
             <h2 class="display-lg text-primary-container mb-12">The Commissary</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto text-left">
                 <div class="bg-white/10 p-6 md:p-8 rounded-2xl hover:bg-white/20 transition-colors">
                     <h3 class="font-serif italic text-xl md:text-2xl mb-4">Airbnb Essentials</h3>
-                    <p class="text-sm opacity-80">Deli meats, bagels, frozen pizzas, and plenty of snacks for the park bag.</p>
+                    <p class="text-sm opacity-80">Deli meats, bagels, frozen pizzas, and plenty of snacks for the park bag. Stop at the Harbor Target for refills.</p>
                 </div>
                 <div class="bg-white/10 p-6 md:p-8 rounded-2xl hover:bg-white/20 transition-colors">
                     <h3 class="font-serif italic text-xl md:text-2xl mb-4">Park Feast</h3>
@@ -359,7 +563,6 @@
         </div>
     </section>
 
-    <!-- The Survival Kit (Checklist) -->
     <section id="packing" class="py-16 md:py-24 tier-3">
         <div class="container mx-auto px-6 md:px-8 max-w-5xl">
             <h2 class="display-lg text-tertiary mb-12 md:mb-16 text-center">Adventure Kit</h2>
@@ -367,32 +570,31 @@
                 <div class="card bg-white">
                     <h4 class="font-serif italic text-lg md:text-xl text-secondary mb-4">Tech</h4>
                     <ul class="space-y-2 text-xs md:text-sm opacity-80">
-                        <li>☐ Power Bank (Critical)</li>
+                        <li>☐ 2nd Power Bank (Critical for Fiddle Fattling)</li>
                         <li>☐ Charging Cable</li>
-                        <li>☐ Disneyland App</li>
+                        <li>☐ Play Disney App & Disneyland App</li>
                     </ul>
                 </div>
                 <div class="card bg-white">
                     <h4 class="font-serif italic text-lg md:text-xl text-secondary mb-4">Comfort</h4>
                     <ul class="space-y-2 text-xs md:text-sm opacity-80">
                         <li>☐ Cooling Towels</li>
-                        <li>☐ Water Bottles</li>
-                        <li>☐ Extra Socks</li>
+                        <li>☐ Refillable Water Bottles</li>
+                        <li>☐ Extra Socks (Change at 4 PM)</li>
                     </ul>
                 </div>
                 <div class="card bg-white sm:col-span-2 md:col-span-1">
                     <h4 class="font-serif italic text-lg md:text-xl text-secondary mb-4">Pro Tips</h4>
                     <ul class="space-y-2 text-xs md:text-sm opacity-80">
-                        <li>☐ Cheap Ponchos</li>
-                        <li>☐ Ziploc Bags</li>
-                        <li>☐ Penny Change</li>
+                        <li>☐ Ziploc Bags (Save your $15 snacks)</li>
+                        <li>☐ Target Ponchos</li>
+                        <li>☐ Penny Change for pressed coins</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="py-16 md:py-24 tier-1 text-center">
         <div class="max-w-2xl mx-auto px-6 md:px-8">
             <h2 class="display-lg text-primary mb-8 italic text-5xl md:text-6xl">Enjoy the Magic</h2>
@@ -402,4 +604,3 @@
 
 </body>
 </html>
-
